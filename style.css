@@ -1,0 +1,112 @@
+<!-- NAVIGATION BAR FOR MICHAELAFTERDARK.COM -->
+<style>
+  /* Base Nav Styling */
+  nav {
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    font-family: Arial, sans-serif;
+  }
+
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  nav ul li {
+    position: relative;
+  }
+
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 18px;
+    display: block;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+
+  nav a:hover {
+    background: #d63384;
+  }
+
+  /* Dropdown Styles */
+  nav ul ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #111;
+    display: none;
+    flex-direction: column;
+    min-width: 200px;
+    z-index: 99;
+  }
+
+  nav ul li:hover > ul {
+    display: flex;
+  }
+
+  nav ul ul a {
+    padding: 10px 16px;
+  }
+
+  /* Responsive Toggle */
+  .menu-toggle {
+    display: none;
+    background: #d63384;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+    nav ul {
+      display: none;
+      width: 100%;
+      flex-direction: column;
+    }
+    nav ul li {
+      width: 100%;
+    }
+    nav ul ul {
+      position: relative;
+    }
+    nav ul.showing {
+      display: flex;
+    }
+  }
+</style>
+
+<nav>
+  <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('showing')">
+    ☰ Menu
+  </button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li>
+      <a href="service-area.html">Service Area ▾</a>
+      <ul>
+        <li><a href="charleston.html">Charleston</a></li>
+        <li><a href="folly-beach.html">Folly Beach</a></li>
+        <li><a href="isle-of-palms.html">Isle of Palms</a></li>
+      </ul>
+    </li>
+    <li><a href="charleston-parties.html">Charleston Parties</a></li>
+    <li><a href="mount-pleasant.html">Mount Pleasant Base</a></li>
+    <li><a href="local-partners.html">Local Partners</a></li>
+    <li><a href="faq-contact.html">FAQ / Contact</a></li>
+  </ul>
+</nav>

@@ -20,8 +20,32 @@
     a{color:#ff3b6a;}
     a:hover{color:#ff628c;}
   </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+
+<nav>
+    <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('showing')">
+      ☰ Menu
+    </button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li>
+        <a href="service-area.html">Service Area ▾</a>
+        <ul>
+          <li><a href="charleston.html">Charleston</a></li>
+          <li><a href="folly-beach.html">Folly Beach</a></li>
+          <li><a href="isle-of-palms.html">Isle of Palms</a></li>
+        </ul>
+      </li>
+      <li><a href="charleston-parties.html">Charleston Parties</a></li>
+      <li><a href="mount-pleasant.html">Mount Pleasant Base</a></li>
+      <li><a href="local-partners.html">Local Partners</a></li>
+      <li><a href="faq-contact.html">FAQ / Contact</a></li>
+    </ul>
+  </nav>
 
 <header>
   <h1>Michael After Dark</h1>
@@ -99,7 +123,7 @@
   "description": "Mount Pleasant-based nightlife and private party experience supporting Michael at Your Place and serving Charleston, SC.",
   "founder": {
     "@type": "Person",
-    "name": "Michael Charleson"
+    "name": "Michael Charleston"
   }
 }
 </script>
