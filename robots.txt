@@ -1,0 +1,77 @@
+# robots.txt for michaelafterdark.com
+# Michael at Your Place - Charleston Male Entertainment Service
+
+User-agent: *
+Allow: /
+
+# Allow all pages to be crawled for local SEO
+Allow: /index.html
+Allow: /about.html
+Allow: /service-area.html
+Allow: /charleston-parties.html
+Allow: /mount-pleasant.html
+Allow: /local-partners.html
+Allow: /faq-contact.html
+
+# Allow service area subfolder pages
+Allow: /service-area/
+Allow: /service-area/charleston.html
+Allow: /service-area/folly-beach.html
+Allow: /service-area/isle-of-palms.html
+
+# Allow access to CSS and JS for proper rendering
+Allow: /style.css
+Allow: /*.css
+Allow: /*.js
+Allow: /images/
+
+# Disallow admin or private areas if they exist
+Disallow: /admin/
+Disallow: /private/
+Disallow: /wp-admin/
+Disallow: /cgi-bin/
+
+# Disallow duplicate content or test pages
+Disallow: /test/
+Disallow: /dev/
+Disallow: /backup/
+
+# Allow search engines to access feeds/sitemaps
+Allow: /sitemap.xml
+Allow: /sitemap_index.xml
+Allow: /feed/
+
+# Crawl delay (optional - can help with server load)
+# Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://michaelafterdark.com/sitemap.xml
+
+# User-agent specific rules for major search engines
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Googlebot-Image
+Allow: /images/
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Slurp
+Allow: /
+
+# Block bad bots (optional - uncomment if you want to block these)
+# User-agent: AhrefsBot
+# Disallow: /
+
+# User-agent: MJ12bot
+# Disallow: /
+
+# User-agent: SemrushBot
+# Disallow: /
+
+# User-agent: DotBot
+# Disallow: /
