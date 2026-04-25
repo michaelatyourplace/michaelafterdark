@@ -49,6 +49,88 @@
     main {max-width:900px;margin:0 auto;padding:20px;}
     ul {line-height:1.8;}
     .author-note {font-style:italic;color:#ccc;font-size:0.95rem;margin-top:10px;}
+
+    /* ── Blog Links Section ── */
+    .blog-links-section {margin:50px 0;}
+    .blog-links-section h2 {margin-bottom:8px;}
+    .blog-links-intro {color:#ccc;margin-bottom:28px;font-size:0.97rem;}
+    .blog-card-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+      gap:20px;
+      margin-top:10px;
+    }
+    .blog-card {
+      background:#1a1a1a;
+      border-radius:10px;
+      padding:22px 20px;
+      border:1px solid #2a2a2a;
+      transition:border-color 0.25s, transform 0.25s;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .blog-card:hover {border-color:#ff3b6a;transform:translateY(-3px);}
+    .blog-card-tag {
+      display:inline-block;
+      background:#ff3b6a22;
+      color:#ff3b6a;
+      font-size:0.72rem;
+      font-weight:700;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      padding:3px 10px;
+      border-radius:20px;
+      width:fit-content;
+    }
+    .blog-card h4 {
+      color:#f2f2f2;
+      font-size:0.97rem;
+      font-weight:600;
+      margin:0;
+      line-height:1.4;
+    }
+    .blog-card p {
+      color:#aaa;
+      font-size:0.85rem;
+      margin:0;
+      line-height:1.5;
+      flex:1;
+    }
+    .blog-card-link {
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      color:#ff3b6a;
+      font-size:0.85rem;
+      font-weight:600;
+      text-decoration:none;
+      margin-top:4px;
+    }
+    .blog-card-link:hover {color:#ff628c;}
+    .blog-card-link svg {width:14px;height:14px;flex-shrink:0;}
+
+    /* ── Quick-Jump Anchor Bar ── */
+    .jump-bar {
+      background:#1a1a1a;
+      border-radius:10px;
+      padding:18px 24px;
+      margin:30px 0;
+      border:1px solid #2a2a2a;
+    }
+    .jump-bar p {margin:0 0 10px;font-size:0.85rem;color:#aaa;text-transform:uppercase;letter-spacing:0.08em;font-weight:600;}
+    .jump-bar-links {display:flex;flex-wrap:wrap;gap:10px;}
+    .jump-bar-links a {
+      background:#0e0e0e;
+      border:1px solid #333;
+      color:#f2f2f2;
+      padding:6px 14px;
+      border-radius:20px;
+      font-size:0.82rem;
+      text-decoration:none;
+      transition:border-color 0.2s,color 0.2s;
+    }
+    .jump-bar-links a:hover {border-color:#ff3b6a;color:#ff3b6a;}
   </style>
 </head>
 
@@ -83,6 +165,22 @@
   </header>
 
   <main>
+
+    <!-- Quick-Jump Bar -->
+    <div class="jump-bar">
+      <p>Jump to section</p>
+      <div class="jump-bar-links">
+        <a href="#foundation">3–4 Months Out</a>
+        <a href="#activities">2 Months Out</a>
+        <a href="#final-details">3–4 Weeks Out</a>
+        <a href="#final-prep">1 Week Out</a>
+        <a href="#day-of">Day-Of Flow</a>
+        <a href="#pro-tips">Pro Tips</a>
+        <a href="#mistakes">Mistakes to Avoid</a>
+        <a href="#blog-links">Further Reading</a>
+      </div>
+    </div>
+
     <div class="intro-box">
       <p>
         Chucktown has become one of the Southeast's top bachelorette destinations, and for good reason. Historic downtown charm, world-class restaurants, beautiful beaches just minutes away, and a nightlife scene that balances sophistication with Southern fun — it's the perfect backdrop for celebrating your bride-to-be.
@@ -95,7 +193,10 @@
       </p>
     </div>
 
-    <h2>3-4 Months Before: Foundation Planning</h2>
+    <!-- ══════════════════════════════════════════════
+         3–4 MONTHS
+    ══════════════════════════════════════════════ -->
+    <h2 id="foundation">3-4 Months Before: Foundation Planning</h2>
 
     <div class="timeline-section">
       <div class="timeline-item">
@@ -106,12 +207,12 @@
         <ul>
           <li><strong>Vacation rental:</strong> $200-400/person for 2 nights (varies dramatically by location and season)</li>
           <li><strong>Flights:</strong> Chucktown International Airport (CHS) — price varies by origin city</li>
-          <li><strong>Food & drinks:</strong> $150-300/person for weekend dining and bars</li>
+          <li><strong>Food &amp; drinks:</strong> $150-300/person for weekend dining and bars</li>
           <li><strong>Activities:</strong> $100-200/person (boat charters, entertainment, experiences)</li>
           <li><strong>Transportation:</strong> $50-100/person (Uber/Lyft, possible party bus)</li>
         </ul>
         <div class="pro-tip">
-          <strong>Pro Tip:</strong> April-May and September-October are peak season with higher rental prices but best weather. July-August offers lower rental rates but intense heat and humidity. November-March provides the best deals with mild winter weather.
+          <strong>Pro Tip:</strong> April-May and September-October are peak season with higher rental prices but best weather. July-August offers lower rental rates but intense heat and humidity. November-March provides the best deals with mild winter weather. Check out this <a href="https://sites.google.com/view/michafterdark/">Charleston bachelorette idea</a>.
         </div>
       </div>
 
@@ -132,32 +233,32 @@
         <p>
           Location strategy is critical in Chucktown. Each area offers different advantages:
         </p>
-        
+
         <div class="checklist-box">
           <div class="checklist-item">
             <strong>Upper King Street (Downtown Chucktown)</strong><br>
             <span style="color:#ccc;">Best for: Walkable nightlife, hotel options, restaurant access</span><br>
             Walk to bars, King Street shopping, rooftop venues. Limited parking. Hotels like The Dewberry, Hotel Bennett, The Francis. Expect $300-500/night for hotel suites or $3,000-5,000 for weekend vacation rental.
           </div>
-          
+
           <div class="checklist-item">
             <strong>French Quarter (Downtown Chucktown)</strong><br>
             <span style="color:#ccc;">Best for: Historic charm, elegant properties, Southern aesthetic</span><br>
             Cobblestone streets, historic homes, proximity to waterfront dining. More expensive, less party-focused than Upper King. Ideal for sophisticated celebrations prioritizing Chucktown's historic character.
           </div>
-          
+
           <div class="checklist-item">
             <strong>Isle of Palms</strong><br>
             <span style="color:#ccc;">Best for: Beach vibes, upscale feel, pool properties</span><br>
             20 minutes from downtown via Isle of Palms Connector. Wild Dunes Resort area, oceanfront rentals, family-friendly beaches. Large rental properties with pools. Must Uber to Chucktown nightlife. Expect $4,000-8,000 for weekend beachfront rental.
           </div>
-          
+
           <div class="checklist-item">
             <strong>Folly Beach</strong><br>
             <span style="color:#ccc;">Best for: Laid-back atmosphere, surf culture, budget-friendly</span><br>
             30 minutes from downtown Chucktown. Bohemian beach town with local bars (The Washout, Taco Boy). More affordable than Isle of Palms. Popular with younger bachelorette groups. Less refined than IOP but more authentic beach town energy.
           </div>
-          
+
           <div class="checklist-item">
             <strong>James Island</strong><br>
             <span style="color:#ccc;">Best for: Space, pools, budget balance</span><br>
@@ -182,7 +283,7 @@
           <li><strong>Kitchen:</strong> Saves money on breakfast, pre-game supplies, late-night snacks</li>
           <li><strong>Outdoor space:</strong> Rooftop deck, balcony, or yard for group gatherings</li>
         </ul>
-        
+
         <div class="pro-tip">
           <strong>Pro Tip:</strong> Read reviews specifically mentioning bachelorette parties. Some properties/neighborhoods have strict noise policies. Downtown Chucktown's South of Broad and Harleston Village are beautiful but very residential with active noise enforcement. Upper King and James Island are more party-tolerant.
         </div>
@@ -202,7 +303,10 @@
       </div>
     </div>
 
-    <h2>2 Months Before: Activity Planning</h2>
+    <!-- ══════════════════════════════════════════════
+         2 MONTHS
+    ══════════════════════════════════════════════ -->
+    <h2 id="activities">2 Months Before: Activity Planning</h2>
 
     <div class="timeline-section">
       <div class="timeline-item">
@@ -210,23 +314,23 @@
         <p>
           Popular Chucktown bachelorette activities book up, especially weekends in April-June and September-October. Consider:
         </p>
-        
+
         <div class="checklist-box">
           <div class="checklist-item">
             <strong>Boat Charters</strong><br>
             Chucktown Harbor cruises, sandbar trips, sunset cruises. Book through Chucktown Harbor Tours, private yacht charters from Chucktown Maritime Center. Expect $500-1,500 for private 2-3 hour charter depending on boat size.
           </div>
-          
+
           <div class="checklist-item">
             <strong>Private Entertainment</strong><br>
             Male entertainment for your rental property. Peak season requires 3-4 weeks advance booking minimum. Services based in Mount Pleasant (like <a href="https://michaelafterdark.com" target="_blank">Michael After Dark</a>) provide reliable local service across Chucktown, Isle of Palms, Folly Beach, and surrounding areas.
           </div>
-          
+
           <div class="checklist-item">
             <strong>Group Activities</strong><br>
             Options include: Chucktown culinary tours, historic district walking tours, beach day at Isle of Palms County Park or Folly Beach, golf at Wild Dunes, spa services (mobile glam squads will come to your rental).
           </div>
-          
+
           <div class="checklist-item">
             <strong>Party Bus or Transportation</strong><br>
             If you're staying at the beach and want a downtown Chucktown night without Uber logistics, book a party bus. Chucktown Party Ride and similar services offer packages. Alternatively, plan on heavy Uber/Lyft usage.
@@ -244,7 +348,7 @@
           <li><strong>Group-friendly:</strong> Leon's Oyster Shop (698 King Street), Taco Boy (multiple locations), The Rooftop at The Vendue (waterfront views), Shem Creek restaurants in Mount Pleasant (Vickery's, Red's Ice House, Water's Edge)</li>
           <li><strong>Brunch (Sunday):</strong> Hominy Grill, Poogan's Porch, Magnolias</li>
         </ul>
-        
+
         <div class="pro-tip">
           <strong>Pro Tip:</strong> For large groups (10+), consider restaurants with private dining rooms or make multiple reservations at same time (split into groups of 6). Shem Creek in Mount Pleasant offers less crowded, more relaxed dining than downtown Chucktown and is perfect for sunset views before heading out.
         </div>
@@ -260,26 +364,29 @@
           <li><strong>9-10 PM:</strong> Return to rental for private entertainment, outfit changes, pre-game</li>
           <li><strong>10:30 PM-2 AM:</strong> Head out to bars/clubs</li>
         </ul>
-        
+
         <p><strong>Upper King Street Nightlife:</strong></p>
         <ul>
-          <li>Republic Garden & Lounge — upscale club atmosphere, popular with bachelorette groups</li>
+          <li>Republic Garden &amp; Lounge — upscale club atmosphere, popular with bachelorette groups</li>
           <li>Mynt — nightclub with DJs, bottle service available</li>
           <li>Prohibition — speakeasy-style cocktail bar</li>
           <li>The Commodore — late-night bar with dancing</li>
         </ul>
-        
+
         <p><strong>Rooftop Bars (Start Earlier, 5-8 PM):</strong></p>
         <ul>
           <li>The Rooftop at The Vendue — harbor views, Ravenel Bridge backdrop</li>
-          <li>Stars Rooftop & Grill Room — Upper King location</li>
+          <li>Stars Rooftop &amp; Grill Room — Upper King location</li>
           <li>Pavilion Bar — Market Street area</li>
           <li>Élevé at Grand Bohemian Hotel — 360-degree Chucktown views</li>
         </ul>
       </div>
     </div>
 
-    <h2>3-4 Weeks Before: Final Details</h2>
+    <!-- ══════════════════════════════════════════════
+         3–4 WEEKS
+    ══════════════════════════════════════════════ -->
+    <h2 id="final-details">3-4 Weeks Before: Final Details</h2>
 
     <div class="timeline-section">
       <div class="timeline-item">
@@ -293,7 +400,7 @@
           <li>Parking situation (critical for downtown Chucktown properties)</li>
           <li>Special requests or themes</li>
         </ul>
-        
+
         <div class="pro-tip">
           <strong>Pro Tip:</strong> Local Mount Pleasant-based services understand Chucktown geography intimately — they know Ravenel Bridge traffic patterns, can navigate to Isle of Palms properties via the IOP Connector efficiently, and arrive reliably. This local knowledge matters when coordinating timing with your group's dinner reservations and nightlife plans.
         </div>
@@ -325,7 +432,7 @@
           <li>Pool floats if your property has a pool</li>
           <li>Matching outfits or accessories for group photos</li>
         </ul>
-        
+
         <p>
           Consider stopping at Target (Mount Pleasant location at 1625 N Highway 17) or Walmart on arrival day rather than flying with bulky items.
         </p>
@@ -345,7 +452,10 @@
       </div>
     </div>
 
-    <h2>1 Week Before: Final Preparations</h2>
+    <!-- ══════════════════════════════════════════════
+         1 WEEK
+    ══════════════════════════════════════════════ -->
+    <h2 id="final-prep">1 Week Before: Final Preparations</h2>
 
     <div class="timeline-section">
       <div class="timeline-item">
@@ -403,7 +513,10 @@
       </div>
     </div>
 
-    <h2>Day-Of: Chucktown Weekend Flow</h2>
+    <!-- ══════════════════════════════════════════════
+         DAY-OF
+    ══════════════════════════════════════════════ -->
+    <h2 id="day-of">Day-Of: Chucktown Weekend Flow</h2>
 
     <div class="timeline-section">
       <div class="timeline-item">
@@ -426,7 +539,7 @@
           <li><strong>Return to Rental (9-10 PM):</strong> Private entertainment, outfit changes, pre-game drinks</li>
           <li><strong>Late Night (11 PM-2 AM):</strong> Upper King Street bars and clubs</li>
         </ul>
-        
+
         <div class="pro-tip">
           <strong>Pro Tip:</strong> Saturday evening is when everything comes together. The 9-10 PM window back at your rental between dinner and nightlife is the ideal time for private entertainment — your group is energized from dinner, dressed up, ready to celebrate, but not yet exhausted from a full night out. This timing lets you enjoy exclusive entertainment in your private space before heading to Chucktown's bar scene.
         </div>
@@ -442,43 +555,49 @@
       </div>
     </div>
 
-    <h2>Chucktown Bachelorette Party Pro Tips</h2>
+    <!-- ══════════════════════════════════════════════
+         PRO TIPS
+    ══════════════════════════════════════════════ -->
+    <h2 id="pro-tips">Chucktown Bachelorette Party Pro Tips</h2>
 
     <div class="checklist-box">
       <div class="checklist-item">
         <strong>Download Uber/Lyft before arrival</strong> — Cell service at Chucktown airport can be spotty, get apps set up in advance
       </div>
-      
+
       <div class="checklist-item">
         <strong>Respect residential neighborhoods</strong> — Chucktown takes noise ordinances seriously, especially South of Broad and historic areas. Keep outdoor noise reasonable, especially after 10 PM.
       </div>
-      
+
       <div class="checklist-item">
         <strong>Ravenel Bridge traffic</strong> — If staying in Mount Pleasant or beach communities and going downtown, avoid Friday evening rush hour (4:30-6:30 PM). Bridge is clear by 7 PM.
       </div>
-      
+
       <div class="checklist-item">
         <strong>Upper King Street weekends</strong> — This nightlife corridor gets crowded 11 PM-2 AM on Fridays and Saturdays. Expect lines at popular clubs, surge pricing for Ubers leaving the area.
       </div>
-      
+
       <div class="checklist-item">
         <strong>Stay hydrated</strong> — Chucktown's heat and humidity are no joke, especially if you're from cooler climates. Drink water between alcoholic beverages, especially during daytime activities.
       </div>
-      
+
       <div class="checklist-item">
         <strong>Cash for tips</strong> — While most Chucktown venues accept cards, having cash for tipping Uber drivers, bartenders, and service providers makes everything smoother.
       </div>
-      
+
       <div class="checklist-item">
         <strong>Book local, arrive reliably</strong> — When choosing service providers (entertainment, activities, transportation), prioritize local Chucktown County businesses. Mount Pleasant-based services understand the geography, arrive on time, and know how to navigate Ravenel Bridge traffic, IOP Connector routes, and downtown Chucktown logistics that out-of-town providers struggle with.
       </div>
-      
+
       <div class="checklist-item">
         <strong>Photo opportunities</strong> — Don't miss: Rainbow Row (colorful historic houses), The Battery waterfront, Pineapple Fountain at Waterfront Park, Ravenel Bridge from Mount Pleasant's Pitt Street Bridge, any Chucktown rooftop at sunset
       </div>
     </div>
 
-    <h2>Common Chucktown Bachelorette Party Mistakes to Avoid</h2>
+    <!-- ══════════════════════════════════════════════
+         MISTAKES TO AVOID
+    ══════════════════════════════════════════════ -->
+    <h2 id="mistakes">Common Chucktown Bachelorette Party Mistakes to Avoid</h2>
 
     <div class="pro-tip">
       <strong>Mistake #1: Underestimating travel times</strong><br>
@@ -496,3 +615,162 @@
     </div>
 
     <div class="pro-tip">
+      <strong>Mistake #4: Waiting too long to book entertainment</strong><br>
+      Spring and fall weekends fill up fast for private entertainment in the Charleston area. Booking 4-6 weeks out is good practice; 8+ weeks is better for peak season (April-May, September-October). Last-minute availability exists, but don't count on it for your specific date and time.
+    </div>
+
+    <div class="pro-tip">
+      <strong>Mistake #5: Not designating a point person</strong><br>
+      Without one person holding the reservation details and keeping the group on schedule, bachelorette weekends can unravel quickly. The maid of honor typically fills this role — make sure she has all confirmation numbers, vendor contacts, and a printed (or screenshot) copy of the itinerary in case phones die.
+    </div>
+
+    <div class="pro-tip">
+      <strong>Mistake #6: Forgetting to tip service providers</strong><br>
+      Boat captains, private entertainment, mobile glam squads, and hired drivers all rely on gratuity. Budget 15-20% on top of service costs and collect it from the group ahead of time so there's no awkward collection moment at the end of the night.
+    </div>
+
+    <!-- ══════════════════════════════════════════════
+         CTA
+    ══════════════════════════════════════════════ -->
+    <div class="cta-box">
+      <h3 style="color:#ff3b6a;margin-top:0;">Ready to Book Private Entertainment for Your Chucktown Bachelorette?</h3>
+      <p style="color:#ccc;max-width:600px;margin:0 auto 20px;">
+        Michael After Dark is a Mount Pleasant-based male entertainment service with deep knowledge of the Charleston area — from downtown rentals to Isle of Palms beach houses. Available for bachelorette parties, birthdays, and private events throughout the Lowcountry.
+      </p>
+      <a href="https://michaelafterdark.com/faq-contact.html">Check Availability &amp; Book Now</a>
+    </div>
+
+    <!-- ══════════════════════════════════════════════
+         EXTERNAL BLOG LINKS
+    ══════════════════════════════════════════════ -->
+    <div class="blog-links-section" id="blog-links">
+      <h2 style="margin-bottom:8px;">Further Reading &amp; Resources</h2>
+      <p class="blog-links-intro">
+        Curated guides from around the web to help you plan every detail of your Chucktown bachelorette weekend — from where to eat to what to pack.
+      </p>
+
+      <div class="blog-card-grid">
+
+        <div class="blog-card">
+          <span class="blog-card-tag">Nightlife</span>
+          <h4>The Best Bachelorette Party Bars on King Street, Charleston</h4>
+          <p>A neighborhood-by-neighborhood breakdown of Chucktown's top nightlife spots, with tips on cover charges, drink specials, and which venues love bachelorette groups.</p>
+          <a class="blog-card-link" href="https://www.charlestoncvb.com/nightlife" target="_blank" rel="noopener noreferrer">
+            Read Guide
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+
+        <div class="blog-card">
+          <span class="blog-card-tag">Dining</span>
+          <h4>Best Charleston Restaurants for Large Groups &amp; Private Dining</h4>
+          <p>Comprehensive list of Chucktown restaurants that accommodate groups of 8-20, including private room options, prix-fixe menus, and bachelorette-friendly service.</p>
+          <a class="blog-card-link" href="https://www.eater.com/maps/best-restaurants-charleston" target="_blank" rel="noopener noreferrer">
+            Read Guide
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+
+        <div class="blog-card">
+          <span class="blog-card-tag">Accommodation</span>
+          <h4>Isle of Palms Vacation Rental Guide: What to Know Before You Book</h4>
+          <p>Everything groups need to know about renting on IOP — best streets for beach access, pool availability, parking realities, and the Wild Dunes resort vs. residential areas.</p>
+          <a class="blog-card-link" href="https://www.vrbo.com/vacation-rentals/usa/south-carolina/isle-of-palms" target="_blank" rel="noopener noreferrer">
+            Browse Rentals
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+
+        <div class="blog-card">
+          <span class="blog-card-tag">Activities</span>
+          <h4>Charleston Boat Charter Guide: Sandbar Trips, Sunset Cruises &amp; More</h4>
+          <p>How to choose the right boat charter for your group size and vibe — from intimate sunset sails to party pontoons on the Chucktown Harbor sandbar.</p>
+          <a class="blog-card-link" href="https://www.charlestonharbourtours.com" target="_blank" rel="noopener noreferrer">
+            Explore Charters
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+
+        <div class="blog-card">
+          <span class="blog-card-tag">Bachelorette Planning</span>
+          <h4>25 Bachelorette Party Ideas in Charleston, SC for 2025</h4>
+          <p>From ghost tours of the French Quarter to culinary walks and rooftop yoga, this rundown covers the full spectrum of group activities available in the Lowcountry.</p>
+          <a class="blog-card-link" href="https://www.theknot.com/content/charleston-bachelorette-party-ideas" target="_blank" rel="noopener noreferrer">
+            Read Article
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+
+        <div class="blog-card">
+          <span class="blog-card-tag">Neighborhoods</span>
+          <h4>Folly Beach vs. Isle of Palms: Which Is Right for Your Group?</h4>
+          <p>Side-by-side comparison of Chucktown's two most popular bachelorette beach destinations — vibe, pricing, nightlife access, and which type of group fits each location best.</p>
+          <a class="blog-card-link" href="https://www.tripadvisor.com/Tourism-g54006-Folly_Beach_South_Carolina-Vacations.html" target="_blank" rel="noopener noreferrer">
+            Read Comparison
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+
+        <div class="blog-card">
+          <span class="blog-card-tag">Budget</span>
+          <h4>How Much Does a Charleston Bachelorette Party Actually Cost?</h4>
+          <p>Real cost breakdowns from real groups — accommodation splits, bar tabs, boat charters, and entertainment costs with honest per-person averages for every budget tier.</p>
+          <a class="blog-card-link" href="https://www.brides.com/bachelorette-party-budget-breakdown" target="_blank" rel="noopener noreferrer">
+            Read Breakdown
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+
+        <div class="blog-card">
+          <span class="blog-card-tag">Transportation</span>
+          <h4>Getting Around Charleston: Rideshare, Party Buses &amp; What to Expect</h4>
+          <p>Practical guide to Chucktown transportation logistics — Uber surge zones, Ravenel Bridge timing, party bus rental companies, and how to move a group of 10+ without losing anyone.</p>
+          <a class="blog-card-link" href="https://www.charlestoncvb.com/plan/transportation" target="_blank" rel="noopener noreferrer">
+            Read Guide
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+
+        <div class="blog-card">
+          <span class="blog-card-tag">Packing</span>
+          <h4>What to Pack for a Charleston Bachelorette Weekend (Season-by-Season)</h4>
+          <p>Month-by-month packing lists covering Chucktown's unique weather challenges — summer humidity, cobblestone-friendly footwear, and what to bring for boat days vs. bar nights.</p>
+          <a class="blog-card-link" href="https://www.southernliving.com/travel/south-carolina/charleston-packing-guide" target="_blank" rel="noopener noreferrer">
+            Read List
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════
+         FINAL CTA
+    ══════════════════════════════════════════════ -->
+    <div class="cta-box">
+      <h3 style="color:#ff3b6a;margin-top:0;">Plan Your Perfect Chucktown Bachelorette Weekend</h3>
+      <p style="color:#ccc;max-width:600px;margin:0 auto 20px;">
+        Use this checklist to stay on track, and reach out to Michael After Dark to lock in your private entertainment. We serve all of Chucktown County — downtown, Mount Pleasant, Isle of Palms, Folly Beach, and beyond.
+      </p>
+      <a href="https://michaelafterdark.com/faq-contact.html">Get in Touch</a>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Michael After Dark | Mount Pleasant, SC | Serving Greater Charleston</p>
+    <p style="margin-top:8px;">
+      <a href="https://michaelafterdark.com">Home</a> &nbsp;|&nbsp;
+      <a href="https://michaelafterdark.com/faq-contact.html">Contact</a> &nbsp;|&nbsp;
+      <a href="https://michaelafterdark.com/service.html">Service Area</a>
+    </p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', function () {
+      document.querySelector('nav ul').classList.toggle('showing');
+    });
+  </script>
+</body>
+</html>
