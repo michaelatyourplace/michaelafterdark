@@ -8,39 +8,218 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <link rel="canonical" href="https://michaelafterdark.com/">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 
   <style>
-    body {background-color:#0e0e0e;color:#f2f2f2;font-family:'Poppins',sans-serif;margin:0;}
-    nav {background:#111;padding:15px 0;position:sticky;top:0;z-index:1000;border-bottom:2px solid #ff3b6a;}
-    nav ul {list-style:none;margin:0;padding:0;display:flex;justify-content:center;flex-wrap:wrap;gap:20px;}
-    nav li {position:relative;}
-    nav a {color:#f2f2f2;text-decoration:none;padding:8px 16px;display:block;transition:color 0.3s;}
-    nav a:hover {color:#ff3b6a;}
-    nav ul ul {display:none;position:absolute;top:100%;left:0;background:#1a1a1a;padding:10px 0;min-width:180px;flex-direction:column;gap:0;}
-    nav li:hover > ul {display:flex;}
-    nav ul ul a {padding:10px 20px;}
-    .menu-toggle {display:none;background:#ff3b6a;color:white;border:none;padding:10px 20px;cursor:pointer;border-radius:5px;}
-    @media (max-width: 768px) {
-      .menu-toggle {display:block;margin:0 auto;}
-      nav ul {display:none;flex-direction:column;gap:0;padding:10px 0;}
-      nav ul.showing {display:flex;}
-      nav ul ul {position:static;display:none;background:#0e0e0e;padding-left:20px;}
-      nav li:hover > ul {display:flex;}
+    :root {
+      --pink: #ff3b6a;
+      --pink-hover: #ff628c;
+      --dark: #0e0e0e;
+      --dark-2: #111;
+      --dark-3: #1a1a1a;
+      --light: #f2f2f2;
     }
-    header{text-align:center;padding:80px 20px 40px;}
-    h1,h2{color:#ff3b6a;}
-    .cta{background:#1a1a1a;padding:30px;border-radius:10px;margin:40px 0;text-align:center;border:2px solid #ff3b6a;}
-    .cta a{background-color:#ff3b6a;color:white;padding:12px 30px;border-radius:50px;text-decoration:none;font-weight:500;display:inline-block;}
-    .cta a:hover{background-color:#ff628c;}
-    footer{text-align:center;padding:20px;background:#111;font-size:.9rem;border-top:2px solid #ff3b6a;}
-    a{color:#ff3b6a;}
-    a:hover{color:#ff628c;}
-    main {max-width:1200px;margin:0 auto;padding:20px;}
-    main ul {line-height:1.8;}
+
+    * { box-sizing: border-box; }
+
+    body { background-color: var(--dark); color: var(--light); font-family: 'Poppins', sans-serif; margin: 0; }
+
+    /* ── NAV ── */
+    nav { background: var(--dark-2); padding: 15px 0; position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid var(--pink); }
+    nav ul { list-style:none;margin:0;padding:0;display:flex;justify-content:center;flex-wrap:wrap;gap:20px; }
+    nav li { position: relative; }
+    nav a { color:var(--light);text-decoration:none;padding:8px 16px;display:block;transition:color 0.3s; }
+    nav a:hover { color: var(--pink); }
+    nav ul ul { display:none;position:absolute;top:100%;left:0;background:var(--dark-3);padding:10px 0;min-width:180px;flex-direction:column;gap:0; }
+    nav li:hover > ul { display: flex; }
+    nav ul ul a { padding: 10px 20px; }
+    .menu-toggle { display:none;background:var(--pink);color:white;border:none;padding:10px 20px;cursor:pointer;border-radius:5px; }
+    @media (max-width: 768px) {
+      .menu-toggle { display:block;margin:0 auto; }
+      nav ul { display:none;flex-direction:column;gap:0;padding:10px 0; }
+      nav ul.showing { display: flex; }
+      nav ul ul { position:static;display:none;background:var(--dark);padding-left:20px; }
+      nav li:hover > ul { display: flex; }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center 30%/cover no-repeat;
+      min-height: 70vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(14,14,14,0.4) 0%, rgba(14,14,14,0.9) 100%);
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 840px; }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      color: #fff;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.7);
+      margin-bottom: 16px;
+    }
+    .hero h1 span { color: var(--pink); }
+    .hero p { font-size: 1.1rem; color: rgba(255,255,255,0.9); margin-bottom: 28px; text-shadow: 1px 1px 6px black; }
+    .hero-photo {
+      width: 130px; height: 130px; border-radius: 50%; border: 3px solid var(--pink);
+      object-fit: cover; margin-bottom: 20px; box-shadow: 0 0 20px rgba(255,59,106,0.4);
+    }
+
+    /* ── BUTTONS ── */
+    .btn-primary-cta {
+      background-color: var(--pink); color: white; padding: 14px 36px; border-radius: 50px;
+      text-decoration: none; font-weight: 600; font-size: 1rem; display: inline-block;
+      transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+      box-shadow: 0 4px 18px rgba(255,59,106,0.35);
+    }
+    .btn-primary-cta:hover { background-color: var(--pink-hover); color: white; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(255,59,106,0.5); }
+    .btn-outline-cta {
+      background: transparent; color: var(--pink); border: 2px solid var(--pink); padding: 12px 32px;
+      border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1rem;
+      display: inline-block; transition: background 0.25s, color 0.25s, transform 0.2s;
+    }
+    .btn-outline-cta:hover { background: var(--pink); color: white; transform: translateY(-2px); }
+
+    /* ── MAIN ── */
+    main { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+
+    /* ── HEADINGS ── */
+    h2 { font-family: 'Playfair Display', serif; color: var(--pink); font-size: clamp(1.5rem, 3vw, 2.1rem); margin-top: 0; }
+    h3 { color: var(--pink); font-size: 1.2rem; margin-top: 36px; }
+
+    /* ── TRUST BADGES ── */
+    .trust-row { display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:0 0 28px; }
+    .trust-badge {
+      background: rgba(255,59,106,0.1); border: 1px solid rgba(255,59,106,0.3);
+      border-radius: 50px; padding: 6px 18px; font-size: 0.82rem; color: var(--light);
+    }
+
+    /* ── CTA BANNER ── */
+    .cta-banner {
+      background: linear-gradient(135deg, #1a0008 0%, #2a0012 50%, #1a0008 100%);
+      border: 2px solid var(--pink); border-radius: 16px; padding: 50px 40px;
+      text-align: center; margin: 50px 0; position: relative; overflow: hidden;
+    }
+    .cta-banner::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at center, rgba(255,59,106,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-banner h2 { color: #fff; margin-bottom: 12px; }
+    .cta-banner h2 span { color: var(--pink); }
+    .cta-banner p { color: rgba(255,255,255,0.85); max-width: 580px; margin: 0 auto 28px; font-size: 1.05rem; }
+    .cta-banner .btn-row { display:flex;gap:16px;justify-content:center;flex-wrap:wrap; }
+
+    /* ── INLINE CTA ── */
+    .cta-inline {
+      background: var(--dark-3); border-left: 4px solid var(--pink); border-radius: 8px;
+      padding: 24px 28px; margin: 36px 0; display: flex;
+      align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+    }
+    .cta-inline p { margin: 0; font-size: 1rem; color: var(--light); }
+    .cta-inline strong { color: var(--pink); }
+
+    /* ── FEATURE STRIP ── */
+    .feature-strip { display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin:40px 0; }
+    .feature-card {
+      background: var(--dark-3); border: 1px solid rgba(255,59,106,0.2); border-radius: 12px;
+      padding: 24px 20px; text-align: center; transition: border-color 0.3s, transform 0.2s;
+    }
+    .feature-card:hover { border-color: var(--pink); transform: translateY(-3px); }
+    .feature-icon { font-size: 2rem; margin-bottom: 10px; }
+    .feature-card h4 { color: var(--pink); margin: 0 0 8px; font-size: 1rem; }
+    .feature-card p { font-size: 0.88rem; color: #ccc; margin: 0; }
+
+    /* ── COVERAGE LIST ── */
+    .coverage-list { list-style:none;padding:0;margin:16px 0 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px; }
+    .coverage-list li {
+      background: var(--dark-3); border-radius: 8px; padding: 16px 18px;
+      font-size: 0.92rem; color: #d4d4d4; border-left: 3px solid var(--pink); line-height: 1.6;
+    }
+    .coverage-list li strong { color: var(--light); display: block; margin-bottom: 4px; }
+
+    /* ── LANDMARK GRID ── */
+    .landmark-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin:20px 0 32px; }
+    .landmark-card {
+      background: var(--dark-3); border-radius: 10px; padding: 18px 20px;
+      border-top: 2px solid rgba(255,59,106,0.4);
+    }
+    .landmark-card h4 { color: var(--pink); margin: 0 0 8px; font-size: 0.95rem; }
+    .landmark-card p { font-size: 0.87rem; color: #ccc; margin: 0; line-height: 1.6; }
+
+    /* ── SEASON GRID ── */
+    .season-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin:24px 0 36px; }
+    .season-card { background: var(--dark-3); border-radius: 12px; padding: 24px 20px; border-top: 3px solid var(--pink); }
+    .season-card h4 { color: var(--pink); font-size: 0.95rem; margin: 0 0 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .season-card p { font-size: 0.88rem; color: #ccc; margin: 0; line-height: 1.7; }
+
+    /* ── STREET DETAIL ── */
+    .street-list { list-style:none;padding:0;margin:16px 0 28px;display:flex;flex-direction:column;gap:10px; }
+    .street-list li {
+      background: var(--dark-3); border-radius: 8px; padding: 13px 18px;
+      font-size: 0.92rem; color: #d4d4d4; display:flex;align-items:baseline;gap:10px;
+    }
+    .street-list li strong { color: var(--light); min-width: 160px; }
+
+    /* ── SERVICE NAV ── */
+    .service-nav { background: var(--dark-3); border-radius: 10px; padding: 20px 24px; margin: 30px 0; }
+    .service-nav h4 { color: var(--pink); margin: 0 0 12px; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; }
+    .service-nav ul { list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px; }
+    .service-nav ul li a {
+      color: #ccc; text-decoration: none; background: rgba(255,255,255,0.05);
+      padding: 6px 14px; border-radius: 50px; font-size: 0.88rem;
+      border: 1px solid rgba(255,255,255,0.1); transition: all 0.25s;
+    }
+    .service-nav ul li a:hover,
+    .service-nav ul li a.active { background: var(--pink); color: white; border-color: var(--pink); }
+
+    /* ── STICKY MOBILE CTA ── */
+    .sticky-cta {
+      display: none; position: fixed; bottom: 0; left: 0; right: 0;
+      background: var(--pink); color: white; text-align: center;
+      padding: 16px; font-weight: 600; font-size: 1rem;
+      text-decoration: none; z-index: 9999; letter-spacing: 0.5px;
+    }
+    .sticky-cta:hover { background: var(--pink-hover); color: white; }
+    @media (max-width: 768px) { .sticky-cta { display: block; } }
+
+    /* ── PROSE ── */
+    .prose-section { margin: 36px 0; }
+    .prose-section p { line-height: 1.8; color: #d4d4d4; }
+
+    /* ── FOOTER ── */
+    footer { text-align:center;padding:24px 20px;background:var(--dark-2);font-size:0.88rem;border-top:2px solid var(--pink);color:#aaa; }
+    footer a { color: var(--pink); text-decoration: none; }
+
+    a { color: var(--pink); }
+    a:hover { color: var(--pink-hover); }
+
+    @media (max-width: 600px) {
+      .cta-banner { padding: 36px 20px; }
+      .cta-inline { flex-direction: column; align-items: flex-start; }
+      main { padding-bottom: 80px; }
+      .street-list li { flex-direction: column; gap: 4px; }
+      .street-list li strong { min-width: unset; }
+    }
   </style>
 </head>
 
 <body>
+
+  <!-- Sticky mobile CTA -->
+  <a href="faq-contact.html" class="sticky-cta">🌴 Book Your IOP Entertainment Tonight →</a>
+
   <nav>
     <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('showing')">
       ☰ Menu
@@ -57,187 +236,238 @@
           <li><a href="mount-pleasant.html">Mount Pleasant</a></li>
         </ul>
       </li>
-      <li><a href="../downtown-parties.html">Charleston Parties</a></li>
-      <li><a href="../east-cooper-location.html">Mount Pleasant Base</a></li>
-      <li><a href="../local-partners.html">Local Partners</a></li>
       <li><a href="../faq-contact.html">FAQ / Contact</a></li>
     </ul>
   </nav>
 
-
-  <header>
-    <h1>Isle of Palms Private Entertainment</h1>
-    <p>Michael After Dark — Professional entertainment for IOP's premier vacation rentals and beachfront celebrations.</p>
-  </header>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <img src="../michaelafterdark.jpg" alt="Michael After Dark" class="hero-photo">
+      <h1>Isle of Palms <span>Private Male Entertainment</span><br>for Luxury Beach Celebrations</h1>
+      <p>Oceanfront homes, Wild Dunes estates, canal-side rentals — Michael brings the experience directly to your IOP property.</p>
+      <div class="trust-row">
+        <span class="trust-badge">🌴 15 Min from Mount Pleasant</span>
+        <span class="trust-badge">✅ Upscale & Discreet</span>
+        <span class="trust-badge">✅ Full Island Coverage</span>
+        <span class="trust-badge">✅ Luxury Rental Friendly</span>
+      </div>
+      <a href="faq-contact.html" class="btn-primary-cta">Book Michael for Your IOP Event →</a>
+    </div>
+  </section>
 
   <main>
-    <p>
-      <strong>Isle of Palms (IOP)</strong> represents Charleston County's premier beachfront destination for upscale vacation rentals and luxury coastal celebrations.  
-      <strong>Michael After Dark</strong> serves Isle of Palms with the same Mount Pleasant-based professionalism that has made the service a trusted name across the Lowcountry — bringing private entertainment directly to oceanfront homes, canal-side properties, and exclusive rental estates throughout the island.
-    </p>
 
-    <h3>Isle of Palms: Charleston's Upscale Beach Community</h3>
-    <p>
-      Located just 12 miles northeast of downtown Charleston and directly adjacent to Mount Pleasant via the Isle of Palms Connector (SC-517), Isle of Palms is a 5.5-square-mile barrier island known for its family-friendly beaches, prestigious Wild Dunes Resort, and collection of high-end vacation properties.  
-      Unlike the bohemian atmosphere of Folly Beach, IOP attracts a more refined clientele — making it ideal for sophisticated bachelorette weekends, milestone birthday celebrations, and upscale private events that demand professional, discreet entertainment services.  
-      The island's proximity to Mount Pleasant (just 15-20 minutes via Palm Boulevard and the Connector) makes it one of the most convenient service areas for <strong>Michael After Dark</strong>, ensuring reliable scheduling and prompt arrival for all bookings.
-    </p>
+    <!-- TOP CTA BANNER -->
+    <div class="cta-banner">
+      <h2>Ready to Book a <span>Male Entertainer on Isle of Palms?</span></h2>
+      <p>Whether you're in a beachfront estate on Ocean Boulevard, a Wild Dunes villa, or a canal home on Waterway — Michael After Dark delivers a private, professional performance tailored to upscale IOP celebrations.</p>
+      <div class="btn-row">
+        <a href="faq-contact.html" class="btn-primary-cta">Check Availability Now</a>
+        <a href="../about.html" class="btn-outline-cta">Meet Michael</a>
+      </div>
+    </div>
 
-    <h3>Geographic Layout and Service Coverage</h3>
-    <p>
-      <strong>Michael After Dark</strong> provides comprehensive coverage across all Isle of Palms neighborhoods and districts:
-    </p>
-    <ul>
-      <li><strong>Front Beach</strong> — The oceanfront district running along Ocean Boulevard and Palm Boulevard, featuring the island's widest beaches and largest vacation rental properties. This area includes Front Beach Pavilion and the County Park beach access points.</li>
-      <li><strong>Wild Dunes Resort Community</strong> — The island's northeastern section, encompassing luxury oceanfront homes, golf course properties, and the Marina at Wild Dunes. Access via Wild Dunes Way and Palm Boulevard.</li>
-      <li><strong>Waterway Boulevard Corridor</strong> — Canal-side homes and marsh-front properties along the Intracoastal Waterway, offering sunset views and private dock access.</li>
-      <li><strong>Central IOP Neighborhoods</strong> — Mid-island residential areas along 14th Avenue, 21st Avenue, and 28th Avenue, featuring family-oriented beach homes and vacation rentals.</li>
-      <li><strong>Breach Inlet Area</strong> — The island's southern tip near Sullivan's Island, popular with surfers and offering dramatic views of the Charleston Harbor entrance.</li>
+    <!-- FEATURE STRIP -->
+    <div class="feature-strip">
+      <div class="feature-card">
+        <div class="feature-icon">💍</div>
+        <h4>Bachelorette Weekends</h4>
+        <p>IOP's upscale beach houses set the perfect stage — add private entertainment and make it truly legendary.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎂</div>
+        <h4>Milestone Birthdays</h4>
+        <p>30th, 40th, 50th — whatever the milestone, a private entertainer elevates the whole evening.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏡</div>
+        <h4>Luxury Vacation Rentals</h4>
+        <p>Ocean Boulevard estates, Wild Dunes villas, Waterway homes — Michael works with any property type on IOP.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🥂</div>
+        <h4>Private Girls' Events</h4>
+        <p>No special occasion required. If your crew has a beach house and wants an unforgettable night in — this is it.</p>
+      </div>
+    </div>
+
+    <!-- LOCAL ENTITY: IOP OVERVIEW -->
+    <div class="prose-section">
+      <h2>Charleston's Premier Upscale Beach Destination</h2>
+      <p>
+        <strong>Isle of Palms</strong> represents Charleston County's premier beachfront destination for luxury vacation rentals and upscale coastal celebrations. Located just 12 miles northeast of downtown Charleston and directly adjacent to Mount Pleasant via the <strong>Isle of Palms Connector (SC-517)</strong>, IOP is a 5.5-square-mile barrier island known for its pristine beaches, prestigious <strong>Wild Dunes Resort</strong>, and collection of high-end vacation properties.
+      </p>
+      <p>
+        Unlike the bohemian atmosphere of Folly Beach, IOP attracts a more refined clientele — making it ideal for sophisticated bachelorette weekends, milestone birthday celebrations, and upscale private events that call for professional, discreet male entertainment. The island's proximity to Mount Pleasant (just 15–20 minutes via Palm Boulevard) means reliable scheduling and prompt arrival every time.
+      </p>
+
+      <!-- INLINE CTA #1 -->
+      <div class="cta-inline">
+        <p>Booked an oceanfront property on IOP? <strong>Private entertainment is how you make the weekend unforgettable.</strong></p>
+        <a href="faq-contact.html" class="btn-primary-cta">Book Now →</a>
+      </div>
+    </div>
+
+    <!-- COVERAGE AREA -->
+    <h2>Full Island Coverage — Every Neighborhood</h2>
+    <p style="color:#d4d4d4;line-height:1.8;">Michael After Dark serves all Isle of Palms neighborhoods with no additional travel fees. Travel time from the Mount Pleasant base is 15–25 minutes depending on property location — reliable regardless of where your rental sits on the island.</p>
+    <ul class="coverage-list">
+      <li>
+        <strong>Front Beach</strong>
+        Oceanfront district along Ocean Boulevard and Palm Boulevard — the island's widest beaches and largest vacation rentals, near Front Beach Pavilion and County Park access points.
+      </li>
+      <li>
+        <strong>Wild Dunes Resort Community</strong>
+        Luxury oceanfront homes, golf course properties, and marina estates in IOP's northeastern section — accessed via Wild Dunes Way and Palm Boulevard.
+      </li>
+      <li>
+        <strong>Waterway Boulevard Corridor</strong>
+        Canal-side homes and marsh-front properties along the Intracoastal Waterway, with private dock access and stunning sunset views.
+      </li>
+      <li>
+        <strong>Central IOP Neighborhoods</strong>
+        Mid-island beach homes and vacation rentals along 14th, 21st, and 28th Avenues — family-oriented and spacious.
+      </li>
+      <li>
+        <strong>Breach Inlet Area</strong>
+        The island's southern tip near Sullivan's Island — dramatic harbor entrance views and a relaxed surf-scene vibe.
+      </li>
     </ul>
-    <p>
-      The entire island is accessible via the Isle of Palms Connector from Mount Pleasant, with secondary access through Sullivan's Island via Ben Sawyer Boulevard. Travel time from the Mount Pleasant base ranges from 15-25 minutes depending on specific property location and connector traffic.
-    </p>
 
+    <!-- SERVICE AREA NAV -->
     <div class="service-nav">
       <h4>Service Areas</h4>
-         <ul>
-            <li><a href="/service-area/charleston.html">Charleston</a></li>
-            <li><a href="/service-area/folly-beach.html">Folly Beach</a></li>
-            <li><a href="/service-area/isle-of-palms.html">Isle of Palms</a></li>
-            <li><a href="/service-area/james-island.html" class="active">James Island</a></li>
-            <li><a href="/service-area/mount-pleasant.html" class="active">Mount Pleasant</a></li>
-         </ul>
+      <ul>
+        <li><a href="/service-area/charleston.html">Charleston</a></li>
+        <li><a href="/service-area/folly-beach.html">Folly Beach</a></li>
+        <li><a href="/service-area/isle-of-palms.html">Isle of Palms</a></li>
+        <li><a href="/service-area/james-island.html">James Island</a></li>
+        <li><a href="/service-area/mount-pleasant.html">Mount Pleasant</a></li>
+      </ul>
     </div>
 
-    <h3>Local Landmarks and Cultural Context</h3>
-    <p>
-      Isle of Palms maintains a distinct identity within the Charleston County barrier island chain. Key local landmarks that define the island's character include:
-    </p>
-    <ul>
-      <li><strong>Wild Dunes Resort</strong> — Anchoring the island's northeastern section, this resort complex includes the Links and Harbor golf courses, marina facilities, and the Sweetgrass Inn. Many vacation rental properties within Wild Dunes partner with local service providers.</li>
-      <li><strong>Isle of Palms County Park</strong> — Located at 14th Avenue, this public beach access point features facilities, volleyball courts, and is a popular gathering spot for island visitors and residents.</li>
-      <li><strong>The Windjammer</strong> — IOP's iconic beachfront live music venue on Ocean Boulevard, a legendary fixture of Charleston's coastal nightlife since 1991.</li>
-      <li><strong>Breach Inlet</strong> — The tidal channel separating IOP from Sullivan's Island, known for strong currents and as a prime fishing and surfing location.</li>
-      <li><strong>Front Beach</strong> — The main public beach access area near Palm Boulevard, characterized by wide sandy beaches and proximity to island restaurants like The Boathouse at Breach Inlet and Acme Lowcountry Kitchen.</li>
-    </ul>
-    <p>
-      This established infrastructure of hospitality venues, vacation rental companies, and beach culture creates an environment where professional entertainment services like <strong>Michael After Dark</strong> integrate naturally into the island's celebration ecosystem.
-    </p>
+    <!-- LANDMARKS -->
+    <h2>Local Landmarks That Define IOP</h2>
+    <div class="landmark-grid">
+      <div class="landmark-card">
+        <h4>Wild Dunes Resort</h4>
+        <p>Anchoring IOP's northeast — Links and Harbor golf courses, marina, and the Sweetgrass Inn. Many rental properties within Wild Dunes partner with local service providers.</p>
+      </div>
+      <div class="landmark-card">
+        <h4>Isle of Palms County Park</h4>
+        <p>At 14th Avenue — public beach access, volleyball courts, and a central gathering point for island visitors and rental guests alike.</p>
+      </div>
+      <div class="landmark-card">
+        <h4>The Windjammer</h4>
+        <p>IOP's iconic beachfront live music venue on Ocean Boulevard — a legendary fixture of Charleston's coastal nightlife since 1991.</p>
+      </div>
+      <div class="landmark-card">
+        <h4>The Boathouse at Breach Inlet</h4>
+        <p>Top-rated Lowcountry dining at the island's southern tip — a go-to for pre-party dinners before a private night in.</p>
+      </div>
+      <div class="landmark-card">
+        <h4>Acme Lowcountry Kitchen</h4>
+        <p>A beloved IOP dining staple on Ocean Boulevard — great for group dinners before the main event back at the rental.</p>
+      </div>
+      <div class="landmark-card">
+        <h4>Breach Inlet</h4>
+        <p>The tidal channel between IOP and Sullivan's Island — dramatic scenery and a prime fishing and surfing location beloved by locals.</p>
+      </div>
+    </div>
 
-    <h3>The Vacation Rental Market and Service Integration</h3>
-    <p>
-      Isle of Palms boasts one of Charleston County's most developed vacation rental markets, with properties managed by established companies including Dunes Properties, Island Realty, Carolina One Vacation Rentals, and numerous independent Airbnb and VRBO hosts.  
-      Many of these oceanfront and waterway properties feature 4-8 bedrooms, private pools, rooftop decks, and entertainment spaces specifically designed for group gatherings — making them ideal venues for private entertainment experiences.  
-      <strong>Michael After Dark</strong> has developed working relationships with multiple property management companies and individual homeowners throughout IOP, creating a network of trusted referrals and repeat bookings.  
-      Property managers appreciate the reliability that comes from working with a locally-based professional who understands island logistics, respects property guidelines, and maintains the discretion expected in upscale vacation rental environments.
-    </p>
+    <!-- INLINE CTA #2 -->
+    <div class="cta-inline">
+      <p>Staying in a Wild Dunes villa or an Ocean Boulevard estate? <strong>Michael serves all IOP properties — just share your dates.</strong></p>
+      <a href="faq-contact.html" class="btn-primary-cta">Check My Date →</a>
+    </div>
 
-    <h3>Connecting IOP to the Broader Mount Pleasant Service Area</h3>
-    <p>
-      The geographic relationship between Isle of Palms and Mount Pleasant is fundamental to understanding <strong>Michael After Dark's</strong> service model.  
-      Mount Pleasant serves as the operational base, positioned centrally between Charleston, IOP, Sullivan's Island, and Daniel Island.  
-      The Isle of Palms Connector (SC-517) provides direct access from Hungryneck Boulevard in Mount Pleasant to Palm Boulevard on IOP, creating a seamless 15-minute connection.  
-      This proximity means clients booking IOP properties receive the same reliability and local knowledge as Mount Pleasant bookings — there's no sense of traveling to a distant service area.  
-      The entertainer knows traffic patterns on the Connector during summer weekends, understands alternate routes through Sullivan's Island if needed, and can account for seasonal beach traffic when coordinating arrival times.
-    </p>
+    <!-- VACATION RENTAL MARKET -->
+    <div class="prose-section">
+      <h2>The IOP Vacation Rental Market</h2>
+      <p>
+        Isle of Palms boasts one of Charleston County's most developed vacation rental markets, with properties managed by <strong>Dunes Properties</strong>, <strong>Island Realty</strong>, <strong>Carolina One Vacation Rentals</strong>, and numerous independent Airbnb and VRBO hosts. Many oceanfront and waterway properties feature 4–8 bedrooms, private pools, rooftop decks, and entertainment spaces specifically designed for group gatherings — making them ideal venues for private male entertainment experiences.
+      </p>
+      <p>
+        <strong>Michael After Dark</strong> has developed working relationships with multiple IOP property management companies and individual homeowners, creating a network of trusted referrals and repeat bookings. Property managers appreciate the reliability of working with a locally-based professional who understands island logistics, respects property guidelines, and maintains the discretion expected in upscale rental environments.
+      </p>
+    </div>
 
-    <h3>IOP's Position in the Charleston Barrier Island Chain</h3>
-    <p>
-      Understanding Isle of Palms requires placing it within Charleston County's barrier island geography:
-    </p>
-    <ul>
-      <li><strong>North:</strong> Dewees Island (private, accessible only by boat) and Capers Island (uninhabited state heritage preserve)</li>
-      <li><strong>South:</strong> Sullivan's Island, connected via Ben Sawyer Boulevard</li>
-      <li><strong>West:</strong> Mount Pleasant and the Intracoastal Waterway</li>
-      <li><strong>East:</strong> Atlantic Ocean</li>
-    </ul>
-    <p>
-      This positioning makes IOP the northernmost publicly accessible beach in the Charleston area, attracting visitors who want resort-quality beaches without traveling as far as Kiawah Island or Seabrook Island to the south.  
-      For bachelorette parties and celebration groups flying into Charleston International Airport (CHS), IOP offers a convenient 30-minute drive via I-526 and the Isle of Palms Connector, compared to 45+ minutes for southern barrier islands.
-    </p>
+    <!-- SEASONAL -->
+    <h2>When to Book — Seasonal Guide</h2>
+    <div class="season-grid">
+      <div class="season-card">
+        <h4>🔥 Peak Season — May through August</h4>
+        <p>Maximum occupancy. June and July are peak demand for private entertainment. <strong>Book 2–4 weeks in advance</strong> — weekends fill extremely fast during summer on IOP.</p>
+      </div>
+      <div class="season-card">
+        <h4>🌤️ Shoulder Season — April, September & October</h4>
+        <p>Ideal weather, reduced crowds, and better rental rates. September stays warm enough for beach days. Popular for fall bachelorette parties and 30th birthday getaways.</p>
+      </div>
+      <div class="season-card">
+        <h4>❄️ Winter — November through March</h4>
+        <p>Lower rental rates on upscale properties make winter attractive for groups prioritizing indoor entertainment and waterfront views. Holiday events and NYE bookings available.</p>
+      </div>
+    </div>
 
-    <h3>Seasonal Patterns and Event Timing</h3>
-    <p>
-      <strong>Peak Season (May-August):</strong> Isle of Palms experiences maximum occupancy during summer months, with graduation celebrations, bachelorette weekends, and family reunions dominating the rental calendar. June and July represent peak demand for private entertainment services. Advance booking (2-4 weeks) is strongly recommended during this period.
-    </p>
-    <p>
-      <strong>Shoulder Season (April, September-October):</strong> These months offer ideal weather conditions with reduced crowds. September remains warm enough for beach activities while avoiding summer heat and peak rental pricing. Popular for 30th birthday celebrations and fall bachelorette parties.
-    </p>
-    <p>
-      <strong>Winter Season (November-March):</strong> While cooler, IOP remains active with holiday rentals and off-season visitors. Many upscale properties offer lower rates, making winter an attractive option for private celebrations that prioritize indoor entertainment spaces and waterfront views over beach access.
-    </p>
+    <!-- STREET LEVEL DETAIL -->
+    <div class="prose-section">
+      <h2>Street-Level Knowledge — No Guesswork</h2>
+      <p style="color:#d4d4d4;line-height:1.8;">
+        IOP runs on a numbered avenue system (1st through 57th) crossed by Ocean Boulevard (beachfront), Palm Boulevard (main), and Waterway Boulevard (Intracoastal side). High-end vacation rental clusters concentrate in these corridors:
+      </p>
+      <ul class="street-list">
+        <li><strong>Ocean Boulevard</strong> Direct beachfront properties commanding premium rental rates — the most sought-after addresses on the island.</li>
+        <li><strong>14th, 21st & 28th Avenues</strong> Near County Park and central IOP — spacious homes ideal for large groups.</li>
+        <li><strong>41st Avenue</strong> Wild Dunes access corridor — gateway to resort community estates.</li>
+        <li><strong>Waterway Boulevard</strong> Canal homes with private docks and sunset marsh views.</li>
+        <li><strong>Wild Dunes Streets</strong> Grand Pavilion Boulevard, Ocean Club Boulevard, Mariners Walk — the island's most exclusive addresses.</li>
+      </ul>
+      <p style="color:#d4d4d4;line-height:1.8;">
+        IOP's geographic center sits at approximately <strong>32.7868° N, -79.7945° W</strong>, stretching 5 miles from Breach Inlet to Dewees Inlet. The IOP Connector bridge (approx. 32.8134° N, -79.8363° W) is the primary access from Mount Pleasant — about 15 minutes with no traffic.
+      </p>
+    </div>
 
-    <h3>Street-Level Geographic Detail</h3>
-    <p>
-      Isle of Palms operates on a numbered avenue system running east-west (1st Avenue through 57th Avenue), intersected by north-south streets including Ocean Boulevard (beachfront), Palm Boulevard (main thoroughfare), and Waterway Boulevard (Intracoastal side).  
-      High-end vacation rental clusters concentrate along:
-    </p>
-    <ul>
-      <li><strong>Ocean Boulevard</strong> — Direct beachfront properties commanding premium rental rates</li>
-      <li><strong>Desirable numbered avenues</strong> — 14th Avenue (near County Park), 21st Avenue, 28th Avenue, and 41st Avenue (Wild Dunes access)</li>
-      <li><strong>Waterway Boulevard</strong> — Canal homes with private docks and sunset marsh views</li>
-      <li><strong>Wild Dunes streets</strong> — Grand Pavilion Boulevard, Ocean Club Boulevard, Mariners Walk</li>
-    </ul>
-    <p>
-      This detailed geographic familiarity allows <strong>Michael After Dark</strong> to provide accurate arrival estimates, navigate island traffic efficiently, and communicate clearly with clients about property locations.
-    </p>
+    <!-- MOUNT PLEASANT PROXIMITY -->
+    <div class="prose-section">
+      <h2>Why Mount Pleasant Proximity Matters</h2>
+      <p>
+        The 15-minute connection between Mount Pleasant and Isle of Palms isn't just convenient — it's fundamental to the service model. Unlike entertainers traveling from Columbia, Myrtle Beach, or other SC cities, <strong>Michael After Dark</strong> operates from the same community where many IOP property owners and renters also live, work, and shop. The service knows connector traffic patterns on summer weekends, alternate routes through Sullivan's Island, and how to account for seasonal beach traffic when coordinating arrival times. That's the difference between a local professional and a directory listing.
+      </p>
+    </div>
 
-    <h3>Geographic Coordinates and Precise Location Data</h3>
-    <p>
-      Isle of Palms is centered at approximately <strong>32.7868° N latitude, -79.7945° W longitude</strong>.  
-      The island extends roughly 5 miles from Breach Inlet to its northern boundary near Dewees Inlet.  
-      The Isle of Palms Connector bridge crosses the Intracoastal Waterway at approximately <strong>32.8134° N, -79.8363° W</strong>, representing the primary access point from Mount Pleasant.  
-      This geographic precision matters for GPS routing, arrival time calculations, and demonstrating legitimate local knowledge to search engines evaluating entity authenticity.
-    </p>
-
-    <h3>Local Business Ecosystem and Community Connections</h3>
-    <p>
-      Isle of Palms supports a network of restaurants, shops, and service businesses that cater to the vacation rental market:
-    </p>
-    <ul>
-      <li><strong>Dining:</strong> Acme Lowcountry Kitchen, The Boathouse at Breach Inlet, Sea Biscuit Cafe, Dunes Deli, Islander 71</li>
-      <li><strong>Retail:</strong> Isle of Palms Beach Chair Company, IOP Beach Chair Company, Island Bike and Surf Shop</li>
-      <li><strong>Services:</strong> Multiple property management offices, beach equipment rental companies, catering services</li>
-    </ul>
-    <p>
-      <strong>Michael After Dark</strong> exists within this hospitality ecosystem, often recommended alongside other local service providers in vacation rental welcome books and property manager referral lists. This integration strengthens the brand's position as a legitimate Isle of Palms service provider rather than an outside touring act.
-    </p>
-
-    <h3>Why Mount Pleasant Proximity Matters for IOP Service</h3>
-    <p>
-      The 15-minute connection between Mount Pleasant and Isle of Palms isn't just convenient — it's fundamental to the service model.  
-      Unlike entertainers traveling from Columbia, Myrtle Beach, or other South Carolina cities, <strong>Michael After Dark</strong> operates from the same community where many IOP property owners and renters also live, work, or shop.  
-      Clients booking IOP rentals may recognize Mount Pleasant-area businesses, understand local traffic patterns, and appreciate working with someone embedded in the Charleston County coastal community.  
-      This geographic authenticity builds trust and differentiates the service from national entertainment directories that connect clients with whoever is available in a given market.
-    </p>
-
+    <!-- SERVICES NAV -->
     <div class="service-nav">
       <h4>Our Services</h4>
-         <ul>
-          <li><a href="/services/bachelorette-party.html">Bachelorette Parties</a></li>
-          <li><a href="/services/birthday.html">Birthday Parties</a></li>
-          <li><a href="/services/divorce.html">Divorce Parties</a></li>
-          <li><a href="/services/private-party.html" class="active">Private Events</a></li>
-         </ul>
+      <ul>
+        <li><a href="/services/bachelorette-party.html">Bachelorette Parties</a></li>
+        <li><a href="/services/birthday.html">Birthday Parties</a></li>
+        <li><a href="/services/divorce.html">Divorce Parties</a></li>
+        <li><a href="/services/private-party.html" class="active">Private Events</a></li>
+      </ul>
     </div>
 
-    <div class="cta">
-      <p>Planning an Isle of Palms celebration?</p>
-      <p><a href="faq-contact.html">Contact Michael directly</a> to discuss your IOP vacation rental event, verify availability for your dates, or ask questions about service details specific to Isle of Palms properties.</p>
+    <!-- BOTTOM CTA BANNER -->
+    <div class="cta-banner">
+      <h2>Book IOP's <span>Most Trusted Private Male Entertainer</span></h2>
+      <p>Your beach house is booked. The group is confirmed. All that's missing is the entertainment. Contact Michael directly to lock in your IOP date before the weekend is gone.</p>
+      <div class="btn-row">
+        <a href="faq-contact.html" class="btn-primary-cta">🔥 Book Your IOP Date Now</a>
+        <a href="../about.html" class="btn-outline-cta">Learn More About Michael</a>
+      </div>
+      <img src="../logoCP.png" alt="Michael After Dark Logo" style="margin-top:28px;max-width:120px;opacity:0.85;">
     </div>
+
   </main>
 
   <footer>
     <p>
-      © 2025 Michael After Dark — Mount Pleasant, SC  
-      <br />
-      Serving Isle of Palms, Charleston, Folly Beach, and the surrounding Lowcountry.
-      <br />
-      <a href="local-partners.html">View our Local Partners</a> | <a href="faq-contact.html">Contact</a>
+      © 2025 Michael After Dark — Mount Pleasant, SC<br>
+      Serving <a href="isle-of-palms.html">Isle of Palms</a>, <a href="charleston.html">Charleston</a>, <a href="folly-beach.html">Folly Beach</a>, and the surrounding Lowcountry.
     </p>
   </footer>
 
-  <!-- Local Business Schema with Isle of Palms Service Area -->
+  <!-- Local Business Schema — unchanged -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -288,6 +518,12 @@
     ],
     "hasMap": "https://www.google.com/maps/place/Isle+of+Palms,+SC"
   }
+  </script>
+
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      document.querySelector('nav ul').classList.toggle('showing');
+    });
   </script>
 </body>
 </html>
