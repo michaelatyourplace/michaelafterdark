@@ -3,194 +3,222 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Charleston Male Entertainers |  Strippers Charleston | Birthday Party Male Entertainers Girls Night | Michael After Dark </title>
+  <title>Charleston Male Entertainers | Strippers Charleston | Birthday Party Male Entertainers Girls Night | Michael After Dark</title>
   <meta name="description" content="Michael After Dark your ticket to fun for birthday parties an birthday girls night in. Book Michael for a private show.">
   <meta name="keywords" content="Charleston entertainer After Dark">
   <link rel="canonical" href="https://michaelafterdark.com/">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
 
   <style>
-    body {background-color:#515acf;color:#f2f2f2;font-family:'Poppins',sans-serif;margin:0;}
-    header{text-align:center;padding:80px 20px 40px;}
-    h1,h2{color:#3bfff5;}
-    .hero{background:url('https://images.unsplash.com/photo-1551298370-9d45c6aa67f2') center/cover no-repeat;min-height:60vh;display:flex;justify-content:center;align-items:center;flex-direction:column;color:white;text-shadow:2px 2px 8px black;padding:20px;}
-    .cta-btn{background-color:#ff3b6a;color:white;border:none;padding:12px 30px;border-radius:50px;margin-top:20px;text-decoration:none;font-weight:500;}
-    .cta-btn:hover{background-color:#ff628c;}
-    footer{text-align:center;padding:20px;background:#111;font-size:.9rem;}
-    a{color:#ff3b6a;}
-    a:hover{color:#ff628c;}
+    body { background-color: #515acf; color: #f2f2f2; font-family: 'Poppins', sans-serif; margin: 0; }
+    h1, h2, h3 { color: #3bfff5; }
+    a { color: #ff3b6a; }
+    a:hover { color: #ff628c; }
+    .cta-btn { background-color: #ff3b6a; color: white; border: none; padding: 10px 26px; border-radius: 50px; text-decoration: none; font-weight: 600; }
+    .cta-btn:hover { background-color: #ff628c; color: white; }
+
+    /* ── NAV ── */
+    nav { background: #1a1a2e; padding: 8px 16px; display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+    nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 16px; flex-wrap: wrap; }
+    nav ul li a { color: #f2f2f2; text-decoration: none; font-size: .9rem; }
+    nav ul li a:hover { color: #3bfff5; }
+    .menu-toggle { display: none; }
+
+    /* ── HERO STRIP ── */
+    .hero-strip {
+      background: linear-gradient(135deg, #1a1a2e 0%, #2d1b5e 50%, #515acf 100%);
+      padding: 28px 20px 22px;
+      text-align: center;
+      border-bottom: 2px solid #3bfff5;
+    }
+    .hero-strip h1 { font-size: 1.35rem; margin-bottom: 6px; line-height: 1.3; }
+    .hero-strip .tagline { font-size: .92rem; color: #ddd; margin-bottom: 14px; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .hero-strip .cta-btn { font-size: 1rem; padding: 11px 32px; }
+    .hero-strip .sub-cta { font-size: .78rem; color: #aaa; margin-top: 8px; }
+
+    /* ── MAIN CONTENT GRID ── */
+    .main-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+    @media (max-width: 767px) { .main-grid { grid-template-columns: 1fr; } }
+
+    /* ── PHOTO PANEL ── */
+    .photo-panel {
+      background: #1a1a1a;
+      display: flex; align-items: center; justify-content: center;
+      padding: 16px;
+    }
+    .photo-panel img { max-width: 100%; max-height: 320px; object-fit: cover; border-radius: 8px; }
+
+    /* ── PERFECT FOR ── */
+    .perfect-panel {
+      background: #1e1e3a;
+      padding: 20px 24px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .perfect-panel h4 { color: #3bfff5; font-size: .95rem; text-transform: uppercase; font-weight: 700; margin-bottom: 10px; }
+    .perfect-panel ul { list-style: none; padding: 0; margin: 0; columns: 2; column-gap: 12px; }
+    .perfect-panel ul li { font-size: .85rem; margin-bottom: 6px; }
+    .perfect-panel ul li::before { content: "✓ "; color: #3bfff5; font-weight: bold; }
+
+    /* ── EXPERIENCE STEPS ── */
+    .steps-section { background: #2a2a50; padding: 18px 20px; }
+    .steps-section h2 { font-size: 1.1rem; text-align: center; margin-bottom: 14px; }
+    .steps-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+    @media (max-width: 767px) { .steps-grid { grid-template-columns: 1fr 1fr; } }
+    .step-card { background: #1a1a3a; border-radius: 8px; padding: 10px 12px; }
+    .step-card .step-num { color: #ff3b6a; font-weight: 700; font-size: .8rem; }
+    .step-card h6 { color: #3bfff5; font-size: .82rem; margin: 3px 0; }
+    .step-card p { font-size: .78rem; color: #ccc; margin: 0; line-height: 1.4; }
+
+    /* ── BOOK CTA BAND ── */
+    .book-band {
+      background: linear-gradient(90deg, #1a1a2e, #2d1b5e);
+      padding: 18px 20px;
+      text-align: center;
+      border-top: 1px solid #3bfff5;
+      border-bottom: 1px solid #3bfff5;
+    }
+    .book-band h3 { font-size: 1.05rem; margin-bottom: 6px; }
+    .book-band p { font-size: .85rem; color: #ddd; margin-bottom: 12px; max-width: 560px; margin-left: auto; margin-right: auto; }
+
+    /* ── TRUST BAR ── */
+    .trust-bar { background: #111; padding: 10px 20px; }
+    .trust-bar ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 6px 18px; justify-content: center; font-size: .78rem; color: #bbb; }
+    .trust-bar ul li::before { content: "• "; color: #3bfff5; }
+
+    /* ── FOOTER ── */
+    footer { background: #111; padding: 14px 20px; text-align: center; font-size: .82rem; }
+    .footer-cols { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 10px; text-align: left; }
+    .footer-cols h4 { color: #3bfff5; font-size: .85rem; margin-bottom: 6px; }
+    .footer-cols ul { list-style: none; padding: 0; margin: 0; }
+    .footer-cols ul li { margin-bottom: 3px; font-size: .8rem; }
+    .footer-cols ul li a { color: #aaa; text-decoration: none; }
+    .footer-cols ul li a:hover { color: #ff3b6a; }
   </style>
-  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-
 <nav>
-    <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('showing')">
-      ☰ Menu
-    </button>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li>
-        <a href="service.html">Service Area ▾</a>
-      </li>
-      <li><a href="faq-contact.html">FAQ / Contact</a></li>
-    </ul>
-  </nav>
-
-<header>
-  <h1 class="mb-5 fs-3">Male Entertainer Birthday Parties & Girls Nite Out For Hire</h1>
-  <p><strong>Book Now!</strong> A local private entertainer that comes to you. Booking early is always recommended but last minute bookings are accepted. </p>
-</header>
-
-<section class="hero">
-  <a href="tel:8432142049" class="cta-btn" style="font-size:30px"_blank">Book Now </a>
-    <div style="background:#1a1a1a;padding:30px;border-radius:10px;margin:30px 0;text-align:center;">
-        <img src="michaelafterdark.jpg" alt="Charleston Exotic Dancer" style="max-width:100%;height:auto;border-radius:8px;margin-bottom:20px;">
-        <p style="font-size:0.9rem;color:#ccc;font-style:italic;">
-          Male Entertainer for private birthday parties
-        </p>
-      </div>
-</section>
-
-<section class="container py-5">
-  <h2>Charleston Male Entertainer Birthday Party, Noon, Daytime Or After Dark</h2>
-  <p>Charleston party dancer for fun times. I serve the greater Lowcountry, bringing upscale private parties, performance energy, and unmatched attention to detail to Charleston’s best celebrations.</p>
-  <p>I understands the unique personality of each part of the coast — the lively beachfront houses of <a href="https://main.d3gqa22j2b3p47.amplifyapp.com/" target="_blank">Folly Beach</a>, the elegance of Isle of Palms villas, and the sophisticated downtown Charleston crowd. Every show is personalized to the atmosphere of your space, making your celebration exclusive, tasteful, and unforgettable.</p>
-</section>
-
-<section class="py-5 bg-dark">
-  <div class="container">
-      <div class="row justify-content-center">
-          <div class="col-lg-8">
-              
-              <div class="card border-0 shadow-sm mb-5">
-                  <div class="card-body p-4 p-md-5">
-                      <h4 class="text-center text-uppercase fw-bold text-primary mb-4">Perfect for:</h4>
-                      <div class="row">
-                          <div class="col-md-6">
-                              <ul class="list-unstyled">
-                                  <li class="mb-2"><span class="text-success me-2">&#10003;</span> Birthday Party</li>
-                                  <li class="mb-2"><span class="text-success me-2">&#10003;</span> Girls’ Night In</li>
-                                  <li class="mb-2"><span class="text-success me-2">&#10003;</span> Divorce Party</li>
-                                  <li class="mb-2"><span class="text-success me-2">&#10003;</span> Celebrating Birthdays</li>
-                              </ul>
-                          </div>
-                          <div class="col-md-6">
-                              <ul class="list-unstyled">
-                                  <li class="mb-2"><span class="text-success me-2">&#10003;</span> Private vbro bookings</li>
-                                  <li class="mb-2"><span class="text-success me-2">&#10003;</span> Hotel Parties</li>
-                                  <li class="mb-2"><span class="text-success me-2">&#10003;</span> LGBTQ+</li>
-                                  <li class="mb-2"><span class="text-success me-2">&#10003;</span> Just Becausee</li>
-                              </ul>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-
-              <div class="text-center">
-                  <div class="mb-5 mt-5">
-                    <a href="tel:8432142049" class="cta-btn" style="font-size:30px"_blank">Book Now </a>
-                  </div>
-                  <p>
-                      A trained routine full of interactive fun, my <strong>Charleston exotic dancers</strong> high-end experience that’s thrilling, sexy, and tailored to your party.
-                  </p>
-              </div>
-
-          </div>
-      </div>
-  </div>
-</section>
-
-<section class="container py-4">
-  <h3>Why Charleston Chooses Private Entertainment</h3>
-  <p>Charleston’s nightlife has evolved. Travelers and locals alike now prefer intimate, high-end private experiences over crowded bars or outdated revues. Michael After Dark gives groups full control — your space, your playlist, your atmosphere. This approach has quickly made Charleston one of the top destinations for fun weekends and private entertainment in the Southeast.</p>
-  <p>A entertainer and planners operate with professionalism and privacy, ensuring every party — from downtown lofts to Folly Beach houses — runs smoothly. I emphasize style, not chaos, aligning with Charleston’s sophisticated yet playful personality. Guests can relax knowing they’re working with a local Mount Pleasant brand backed by the trusted reputation of Michael After Dark.</p>
-</section>
-
-<section class="container py-4">
-  <h3>Charleston Entertainer - Book Now</h3>
+  <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('showing')">☰ Menu</button>
   <ul>
-    <li>🌴 Serving Charleston Entertainment</li>
-    <li>🏖️ Connected with local hospitality partners in the Charleston Visitors Network (<a href="https://charlestoncvb.com" target="_blank">charlestoncvb.com</a>)</li>
-    <li>🎉 Featured alongside regional lifestyle coverage from <a href="https://www.postandcourier.com" target="_blank">The Post & Courier</a> and Charleston Scene</li>
-    <li>🌅 Supporting Lowcountry tourism by promoting small, locally owned event services</li>
-    <li>💃 Official partner brand of <a href="https://michaelatyourplace.com" target="_blank">Michael at Your Place</a>, and <a href="https://maps.app.goo.gl/vCxwdvCpx9vsQ87v7" target="_blank">Michael After Dark Strip Show</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="service.html">Service Area ▾</a></li>
+    <li><a href="faq-contact.html">FAQ / Contact</a></li>
   </ul>
-</section>
+</nav>
 
-<section class="py-5">
-  <div class="container">
-      <div class="row justify-content-center">
-          <div class="col-lg-8">
+<!-- HERO CTA -->
+<div class="hero-strip">
+  <h1>Charleston's #1 Male Entertainer — He Comes To You</h1>
+  <p class="tagline">
+    Skip the club. Book a private show for your birthday, girls' night, or bachelorette — last-minute slots available. Michael serves all of Charleston and the Lowcountry.
+  </p>
+  <a href="tel:8432142049" class="cta-btn">🎉 Call to Book Now</a>
+  <p class="sub-cta">Early booking recommended · Last-minute accepted · Discreet &amp; professional</p>
+</div>
 
-              <div class="mb-5">
-                  <h2 class="fw-bold text-center mb-4">The Experience: What You Can Expect</h2>
-                  <div class="list-group shadow-sm">
-                      <div class="list-group-item border-0 px-4 py-3">
-                          <h5 class="mb-1 fw-bold text-primary">1. A Grand Entrance</h5>
-                          <p class="mb-0 text-muted">A shirtless arrival and dramatic intro designed to get the room screaming immediately.</p>
-                      </div>
-                      <div class="list-group-item border-0 px-4 py-3 bg-light">
-                          <h5 class="mb-1 fw-bold text-primary">2. The Main Event</h5>
-                          <p class="mb-0 text-muted">A fully choreographed striptease routine (ask us about specific theme outfits!).</p>
-                      </div>
-                      <div class="list-group-item border-0 px-4 py-3">
-                          <h5 class="mb-1 fw-bold text-primary">3. Interactive Fun</h5>
-                          <p class="mb-0 text-muted">Playful party games and audience participation moments tailored to your comfort level.</p>
-                      </div>
-                      <div class="list-group-item border-0 px-4 py-3 bg-light">
-                          <h5 class="mb-1 fw-bold text-primary">4. Photo Ready</h5>
-                          <p class="mb-0 text-muted">Plenty of opportunities for group photos and selfies with the performer.</p>
-                      </div>
-                      <div class="list-group-item border-0 px-4 py-3">
-                          <h5 class="mb-1 fw-bold text-primary">5. Professional Vibes</h5>
-                          <p class="mb-0 text-muted">A high-energy performance that is always tasteful, respectful, and safe.</p>
-                      </div>
-                  </div>
-              </div>
-
-              <div class="bg-dark text-white p-5 rounded-3 text-center shadow">
-                  <h3 class="fw-bold mb-3">Book Your Private Show</h3>
-                  <p class="lead mb-4">
-                      Bring VIP treatment straight to your private party. A <strong>dancers</strong> that is ready to turn up the heat, entice you with a striptease, give everyone a lap dances and create memories.
-                  </p>
-                  
-                  <a href="tel:8432142049" class="btn btn-primary btn-lg fw-bold px-5">
-                      🎉 Request a Quote
-                  </a>
-                  
-              </div>
-
-          </div>
-      </div>
+<!-- PHOTO + PERFECT FOR (side by side) -->
+<div class="main-grid">
+  <div class="photo-panel">
+    <div style="text-align:center;">
+      <img src="michaelafterdark.jpg" alt="Charleston Male Entertainer for private birthday parties">
+      <p style="font-size:.75rem;color:#999;margin-top:6px;font-style:italic;">Male Entertainer · Birthday, Noon, Daytime or After Dark</p>
+    </div>
   </div>
-</section>
+  <div class="perfect-panel">
+    <h4>Perfect for:</h4>
+    <ul>
+      <li>Birthday Parties</li>
+      <li>Girls' Night In</li>
+      <li>Divorce Parties</li>
+      <li>Celebrating Birthdays</li>
+      <li>Private Vrbo / Airbnb</li>
+      <li>Hotel Parties</li>
+      <li>LGBTQ+ Events</li>
+      <li>Just Because</li>
+    </ul>
+    <p style="font-size:.8rem;color:#ccc;margin-top:12px;margin-bottom:0;">
+      I understand the unique personality of every part of the coast — lively beachfront houses at <a href="https://main.d3gqa22j2b3p47.amplifyapp.com/" target="_blank">Folly Beach</a>, elegant Isle of Palms villas, and the sophisticated downtown Charleston crowd. Every show is personalized to your space — exclusive, tasteful, and unforgettable.
+    </p>
+  </div>
+</div>
 
+<!-- EXPERIENCE STEPS -->
+<div class="steps-section">
+  <h2>The Experience: What You Can Expect</h2>
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-num">01</div>
+      <h6>Grand Entrance</h6>
+      <p>A shirtless arrival and dramatic intro designed to get the room screaming immediately.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">02</div>
+      <h6>The Main Event</h6>
+      <p>A fully choreographed striptease routine — ask about specific theme outfits!</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">03</div>
+      <h6>Interactive Fun</h6>
+      <p>Playful party games and audience participation moments tailored to your comfort level.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">04</div>
+      <h6>Photo Ready</h6>
+      <p>Plenty of group photo and selfie opportunities with the performer.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">05</div>
+      <h6>Pro Vibes</h6>
+      <p>High-energy performance — always tasteful, respectful, and safe.</p>
+    </div>
+  </div>
+</div>
+
+<!-- BOOK CTA BAND -->
+<div class="book-band">
+  <h3>Book Your Private Show</h3>
+  <p>
+    Bring VIP treatment straight to your private party. A <strong>trained performer</strong> ready to turn up the heat, entice you with a striptease, give everyone a lap dance, and create lasting memories. A fully choreographed, interactive routine — thrilling, sexy, and tailored to your party.
+  </p>
+  <a href="tel:8432142049" class="cta-btn btn btn-lg fw-bold">🎉 Request a Quote</a>
+</div>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <ul>
+    <li>🌴 Serving Charleston &amp; Lowcountry</li>
+    <li>🏖️ Connected with <a href="https://charlestoncvb.com" target="_blank" style="color:#ff3b6a;">Charleston Visitors Network</a></li>
+    <li>🎉 Featured in <a href="https://www.postandcourier.com" target="_blank" style="color:#ff3b6a;">Post &amp; Courier</a> &amp; Charleston Scene</li>
+    <li>💃 Official partner of <a href="https://michaelatyourplace.com" target="_blank" style="color:#ff3b6a;">Michael at Your Place</a> &amp; <a href="https://maps.app.goo.gl/vCxwdvCpx9vsQ87v7" target="_blank" style="color:#ff3b6a;">Michael After Dark Strip Show</a></li>
+    <li>🌅 Supporting locally owned Lowcountry event services</li>
+  </ul>
+</div>
+
+<!-- FOOTER -->
 <footer>
-  <p style="color: wheat;">&copy; 2025 Michael After Dark | Striptease & Lap Dances </p>
-  <div class="footerDiv">
-
-    <div class="service-nav">
+  <p style="color:wheat;margin-bottom:8px;">&copy; 2025 Michael After Dark | Striptease &amp; Lap Dances</p>
+  <div class="footer-cols">
+    <div>
+      <h4>Services</h4>
       <ul>
-       <h4>Services</h4>
-       <li><a href="birthday.html">Birthday Parties</a></li>
-       <li><a href="divorce.html">Divorce Parties</a></li>
-       <li><a href="private-party.html" class="active">Private Events</a></li>
-       <li><a href="brunch-show-charleston.html">Brunch</a></li>
+        <li><a href="birthday.html">Birthday Parties</a></li>
+        <li><a href="divorce.html">Divorce Parties</a></li>
+        <li><a href="private-party.html">Private Events</a></li>
+        <li><a href="brunch-show-charleston.html">Brunch</a></li>
       </ul>
     </div>
-    <div class="service-nav">
+    <div>
       <h4>Service Areas</h4>
-         <ul>
-            <li>Daniels Island</li>
-            <li>Folly Beach</li>
-            <li>Isle of Palms</li>
-            <li>James Island</li>
-            <li>West Ashley</li>
-            <li>Johns Island</li>
-         </ul>
+      <ul>
+        <li>Daniel's Island</li>
+        <li>Folly Beach</li>
+        <li>Isle of Palms</li>
+        <li>James Island</li>
+        <li>West Ashley</li>
+        <li>Johns Island</li>
+      </ul>
     </div>
   </div>
 </footer>
